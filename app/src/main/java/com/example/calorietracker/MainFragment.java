@@ -7,6 +7,7 @@ import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -17,6 +18,8 @@ import java.util.Locale;
 public class MainFragment extends Fragment {
     View vMain;
     TextView welcomeMessage,welcomeDate;
+    EditText calorieGoal;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle
             savedInstanceState) {
@@ -24,9 +27,17 @@ public class MainFragment extends Fragment {
 
         vMain = inflater.inflate(R.layout.fragment_main, container, false);
         welcomeMessage = (TextView) vMain.findViewById(R.id.welcomemsg);
-        SharedPreferences spMyUnits =
+        calorieGoal = (EditText) vMain.findViewById(R.id.et_calorieGoal);
+        //final SharedPreferences sharePref =
+               // getActivity().getSharedPreferences("users", Context.MODE_PRIVATE);
+        final SharedPreferences sharePref =
                 getActivity().getSharedPreferences("users", Context.MODE_PRIVATE);
-        String user= spMyUnits.getString("firstname",null);
+        final SharedPreferences.Editor editor = sharePref.edit();
+        String user= sharePref.getString("firstname",null);
+        //SharedPreferences.Editor editor = sharePref.edit();
+        String goal = sharePref.getString("Calorie Goal", "");
+        calorieGoal.setText(goal);
+
         welcomeMessage.setText("Welcome " +user +"!");
 
         welcomeDate = (TextView) vMain.findViewById(R.id.tv_datetime) ;
@@ -45,6 +56,22 @@ public class MainFragment extends Fragment {
         //String date = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime());
 
         welcomeDate.setText(date);
+
+
+
+        calorieGoal.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            public void onFocusChange(View v, boolean hasFocus){
+                if(!hasFocus)
+                {
+                    String cgoal = calorieGoal.getText().toString();
+                    editor.putString("Calorie Goal", cgoal);
+                    editor.apply();
+                }
+            }
+
+        });
+
+
         return vMain;
     }
 }
