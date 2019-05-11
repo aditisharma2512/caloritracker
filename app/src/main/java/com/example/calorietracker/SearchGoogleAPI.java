@@ -61,4 +61,22 @@ public class SearchGoogleAPI {
         }
         return snippet;
     }
+
+    /*To extract the image link information from the entire JSON response*/
+    public static String getImageLink(String result) {
+        String snippet = null;
+        try {
+            JSONObject jsonObject = new JSONObject(result);
+            JSONArray jsonlinkArray = jsonObject.getJSONArray("items");
+
+            if (jsonlinkArray != null && jsonlinkArray.length() > 0) {
+                snippet = jsonlinkArray.getJSONObject(0).get("link").toString();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            snippet = "NO INFO FOUND";
+        }
+        return snippet;
+    }
+
 }

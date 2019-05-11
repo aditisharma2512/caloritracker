@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/main"
+            android:title="home" />
+        <item
+            android:id="@+id/nav_enter_unit"
+            android:title="Enter Unit" />
+        <item
+            android:id="@+id/nav_display_unit"
+            android:title="Display Unit" />
+        <item
+            android:id="@+id/nav_report"
+            android:title="Report" />
+
+    </group>
+</menu>
