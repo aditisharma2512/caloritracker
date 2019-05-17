@@ -14,25 +14,34 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp">
+        android:layout_marginBottom="8dp"
+        android:id="@+id/layout1">
 
         <EditText
             android:id="@+id/reportDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:focusableInTouchMode="false"
             android:hint="DD/MM/YYYY"
             android:maxLines="1"
-            android:singleLine="true" />
+            android:singleLine="true"
+            android:focusableInTouchMode="false"
+            android:clickable="true" />
 
     </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Generate Pie"
+        android:id="@+id/generatePie"
+        android:layout_below="@+id/layout1"/>
 
 
     <com.github.mikephil.charting.charts.PieChart
         android:id="@+id/idPieChart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/generatePie">
 
 
     </com.github.mikephil.charting.charts.PieChart>

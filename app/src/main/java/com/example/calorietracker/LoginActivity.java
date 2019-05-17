@@ -254,6 +254,8 @@ public class LoginActivity extends AppCompatActivity{
                         JSONObject jsonobject = jsonarray.getJSONObject(0);
                         String firstname = jsonobject.getJSONObject("userid").getString("firstname");
                         String surname = jsonobject.getJSONObject("userid").getString("surname");
+                        String address = jsonobject.getJSONObject("userid").getString("address");
+                        String postcode = jsonobject.getJSONObject("userid").getString("postcode");
                         String userid = jsonobject.getJSONObject("userid").getString("userid");
                         SharedPreferences sharedPref = getApplicationContext().getSharedPreferences("users",Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = sharedPref.edit();
@@ -261,6 +263,8 @@ public class LoginActivity extends AppCompatActivity{
                         editor.putString("firstname",firstname);
                         editor.putString("lastname",surname);
                         editor.putString("userid",userid);
+                        editor.putString("address",address);
+                        editor.putString("postcode",postcode);
                         editor.apply();
                     }
                 }

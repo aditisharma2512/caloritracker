@@ -63,11 +63,13 @@ public class MainActivity extends AppCompatActivity {
             imageView = (ImageView) findViewById(R.id.image_view);
             //TextView tv = (TextView) findViewById(R.id.tvResultImgURL);
             //tv.setText(SearchGoogleAPI.getImageLink(result));
+            //Picasso p = Picasso.with(getBaseContext());
             Picasso.with(getBaseContext()).load(imageURL).into(imageView);
+
         }
     }
 
-    /*private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
+    private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
         ImageView imageView;
 
         public DownloadImageFromInternet(ImageView imageView) {
@@ -95,5 +97,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-    }*/
+    }
 }

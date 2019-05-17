@@ -21,6 +21,7 @@
     <string name="invalid_credential">Invalid credentials. Login failed! </string>
     <string name="correct_password">This password is correct</string>
     <string name="error_field_required">This field is required</string>
+    <string name="error_field_username">This username is already taken. Please enter another.</string>
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
@@ -31,4 +32,8 @@
         <item>4</item>
         <item>5</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">Map</string>
 </resources>

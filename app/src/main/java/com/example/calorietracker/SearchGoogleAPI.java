@@ -53,7 +53,9 @@ public class SearchGoogleAPI {
             JSONObject jsonObject = new JSONObject(result);
             JSONArray jsonArray = jsonObject.getJSONArray("items");
             if (jsonArray != null && jsonArray.length() > 0) {
-                snippet = jsonArray.getJSONObject(0).getString("snippet");
+                String str  = jsonArray.getJSONObject(0).getString("snippet").replaceAll("\n", "").replaceAll("[(].*?[)]", "");
+                String[] sentences = str.split("\\.");
+                snippet = sentences[0] +"." + sentences[1] + ". \n";
             }
         } catch (Exception e) {
             e.printStackTrace();

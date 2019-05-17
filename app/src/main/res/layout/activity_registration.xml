@@ -135,16 +135,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:orientation="horizontal">
-                <RadioButton android:id="@+id/radio_male"
+
+                <RadioButton
+                    android:id="@+id/radio_male"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Male"
-                    android:onClick="onRadioButtonClicked"/>
+                    android:layout_gravity="left"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Male" />
 
                 <RadioButton
                     android:id="@+id/radio_female"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="right"
                     android:onClick="onRadioButtonClicked"
                     android:text="Female" />
             </RadioGroup>
@@ -233,7 +237,7 @@
                 android:layout_marginBottom="8dp">
 
                 <EditText
-                    android:id="@+id/passowrd"
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="password"

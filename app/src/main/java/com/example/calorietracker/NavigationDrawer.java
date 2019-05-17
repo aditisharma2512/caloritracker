@@ -43,17 +43,21 @@ public class NavigationDrawer extends AppCompatActivity
             int id = item.getItemId();
             Fragment nextFragment = null;
             switch (id) {
-                case R.id.nav_display_unit:
-                    nextFragment = new DisplayUnitFragment();
-                    getSupportActionBar().setTitle("Give Name");
+                case R.id.nav_diet:
+                    nextFragment = new DietFragment();
+                    getSupportActionBar().setTitle("Diet");
                     break;
-                case R.id.nav_enter_unit:
-                    nextFragment = new EnterUnitFragment();
-                    getSupportActionBar().setTitle("Give Name");
+                case R.id.nav_steps:
+                    nextFragment = new StepsFragment();
+                    getSupportActionBar().setTitle("Steps");
                     break;
                 case R.id.nav_report:
                     nextFragment = new ReportFragment();
-                    getSupportActionBar().setTitle("Give Name");
+                    getSupportActionBar().setTitle("Report");
+                    break;
+                case R.id.nav_maps:
+                    nextFragment = new MapsFragment();
+                    getSupportActionBar().setTitle("Maps");
                     break;
                     default: nextFragment = new MainFragment();
             }

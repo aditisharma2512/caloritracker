@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.example.calorietracker"
-        minSdkVersion 15
+        minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -27,7 +27,12 @@ dependencies {
     implementation 'com.google.code.gson:gson:2.3'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    implementation "android.arch.persistence.room:runtime:1.1.1"
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android.gms:play-services-maps:16.1.0'
+    implementation 'com.google.android.gms:play-services-places:16.0.0'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
 }
